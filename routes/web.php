@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\TylerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*
+Route::get('/posts', [TylerController::class, 'showList']);
+Route::get('/reurl', [TylerController::class, 'reurl']);
+Route::get('/postpara/{id?}', [TylerController::class, 'para']);
+*/
+
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/{id}', [PostController::class, 'show']);
