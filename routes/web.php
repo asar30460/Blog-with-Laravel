@@ -23,5 +23,6 @@ Route::get('/postpara/{id?}', [TylerController::class, 'para']);
 */
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/test', [HomeController::class, 'test']);
 Route::get('/posts', [PostController::class, 'index']);
-Route::get('/{id}', [PostController::class, 'show']);
+Route::get('/posts/{id}', [PostController::class, 'show']);
