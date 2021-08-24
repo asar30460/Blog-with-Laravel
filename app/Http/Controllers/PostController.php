@@ -17,7 +17,13 @@ class PostController extends Controller
         return view('Post.index', $data);
     }
 
-    public function show() {
-        return view('Post.show');
+    public function show($id) {
+        $post=Post::find($id);
+
+        $data=[
+          'post'=>$post
+        ];
+
+        return view('Post.show', $data);
     }
 }
